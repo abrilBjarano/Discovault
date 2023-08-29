@@ -31,8 +31,7 @@ export class MainPageComponent {
   }
 
   onDeleteRecordMain( index: number ): void {
-    console.log({index});
-
+    this.recordsMain.splice(index, 1);
   }
 
 }
