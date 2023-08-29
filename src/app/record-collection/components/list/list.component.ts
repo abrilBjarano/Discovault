@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Record } from '../../interfaces/record.interface';
+import { ReturnStatement } from '@angular/compiler';
 
 @Component({
   selector: 'record-collecion-list',
@@ -19,7 +20,10 @@ export class ListComponent {
   @Output()
   public onDeleteRecordList: EventEmitter<string> = new EventEmitter();
 
-  emitId(id: string): void {
+  emitId(id?: string): void {
+
+    if( !id ) return;
+
     this.onDeleteRecordList.emit(id);
   }
 
