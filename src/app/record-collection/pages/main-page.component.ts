@@ -8,5 +8,19 @@ import { RecordCollectionService } from '../services/record-collection.service';
 })
 
 export class MainPageComponent {
-  constructor( public recordCollectionService: RecordCollectionService ) {}
+
+  constructor( private recordCollectionService: RecordCollectionService ) {}
+
+  get records(): Record[] {
+    return [...this.recordCollectionService.recordsMain];
+  }
+
+  onDeleteRecordList( id: string ): void {
+    this.recordCollectionService.deleteRecordById( id )
+  }
+
+  onNewRecordMain( record: Record ): void {
+    this.recordCollectionService.onNewRecordMain(  record )
+  }
+
 }
