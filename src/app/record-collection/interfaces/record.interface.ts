@@ -1,8 +1,9 @@
 
 
 export interface Record {
-  name: string;
-  by: string;
-  songs: number;
+  id?:           string;
+  name:         string;
+  by:           string;
+  songs:        number;
   release_date: number;
 }
