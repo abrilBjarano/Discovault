@@ -15,4 +15,4 @@ import { MainPageComponent } from './pages/main-page.component';
     MainPageComponent
   ]
 })
-export class ColeccionDiscosModule { }
+export class RecordCollectionModule { }

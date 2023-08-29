@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ColeccionDiscosModule } from './coleccion-discos/coleccion-discos.module';
+import { RecordCollectionModule } from './record-collection/record-collection.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { ColeccionDiscosModule } from './coleccion-discos/coleccion-discos.modul
   ],
   imports: [
     BrowserModule,
-    ColeccionDiscosModule
+    RecordCollectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
