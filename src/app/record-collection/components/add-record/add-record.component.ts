@@ -13,8 +13,8 @@ export class AddRecordComponent {
   public recordAdd: Record = {
     name: '',
     by: '',
-    songs: 0,
-    release_date: 0
+    songs: NaN,
+    release_date: NaN
   };
 
   emitRecord(): void {
