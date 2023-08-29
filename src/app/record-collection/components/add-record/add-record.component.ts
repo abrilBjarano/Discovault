@@ -19,8 +19,10 @@ export class AddRecordComponent {
 
   emitRecord(): void {
 
+
     const { name, by , songs, release_date} = this.recordAdd;
 
+    // TODO: Validation correction
     if( name.length === 0 )
       return;
 
