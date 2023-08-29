@@ -3,15 +3,15 @@
 <div class="row ms-auto me-auto">
   <div class="col">
     <record-collecion-list
-      [recordList]="recordsMain"
-      (onDeleteRecordList)="onDeleteRecordMain($event)"
+      [recordList]="recordCollectionService.recordsMain"
+      (onDeleteRecordList)="recordCollectionService.onDeleteRecordMain($event)"
     >
     </record-collecion-list>
   </div>
 
   <div class="col">
     <record-collection-add-record
-      (onNewRecordAdd)="onNewRecordMain($event)"
+      (onNewRecordAdd)="recordCollectionService.onNewRecordMain($event)"
     >
     </record-collection-add-record>
   </div>
