@@ -19,10 +19,20 @@ export class MainPageComponent {
     by: 'Shakira',
     songs: 11,
     release_date: 1998
+  },{
+    name: 'Pies Descalzos',
+    by: 'Shakira',
+    songs: 11,
+    release_date: 1995
   }]
 
   onNewRecordMain( record: Record ): void {
     this.recordsMain.push( record );
+  }
+
+  onDeleteRecordMain( index: number ): void {
+    console.log({index});
+
   }
 
 }

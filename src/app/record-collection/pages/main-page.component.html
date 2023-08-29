@@ -4,6 +4,7 @@
   <div class="col">
     <record-collecion-list
       [recordList]="recordsMain"
+      (onDeleteRecordList)="onDeleteRecordMain($event)"
     >
     </record-collecion-list>
   </div>

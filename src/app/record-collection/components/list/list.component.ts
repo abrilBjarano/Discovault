@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Record } from '../../interfaces/record.interface';
 
 @Component({
@@ -14,4 +14,11 @@ export class ListComponent {
     songs: 1,
     release_date: 2005
   }]
+
+  @Output()
+  public onDeleteRecordList: EventEmitter<number> = new EventEmitter();
+
+  emitId(index: number): void {
+    this.onDeleteRecordList.emit(index);
+  }
 }

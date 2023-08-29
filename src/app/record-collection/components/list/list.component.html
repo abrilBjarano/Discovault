@@ -8,8 +8,11 @@
     let isEven = even;
     let isOdd = odd;"
 
-    class="list-group-item"
-
+    class="
+      list-group-item
+      d-flex justify-content-between
+      align-items-center
+    "
 
     [ngClass]="{
       'list-group-item-danger': isEven,
@@ -17,15 +20,25 @@
     }"
   >
 
-    <span class="text-primary"> {{ i + 1 }}. </span>
-    <strong>{{ record.name }} </strong>
-    <span> by </span>
-    <strong>{{ record.by }} </strong>
+    <div>
+      <span class="text-primary"> {{ i + 1 }}. </span>
+      <strong>{{ record.name }} </strong>
+      <span> by </span>
+      <strong>{{ record.by }} </strong>
+      <br>
+      <span> Songs: {{record.songs}} - </span>
+      <span> Release date: {{record.release_date}}</span>
+    </div>
 
-    <br>
-
-    <span> Songs: {{record.songs}} - </span>
-    <span> Release date: {{record.release_date}}</span>
+    <button
+      class="
+        btn btn-danger
+        btn-sm
+      "
+      (click)="emitId(i);"
+    >
+      X
+    </button>
 
   </li>
 </ul>
