@@ -4,7 +4,7 @@
   <div class="col">
     <record-collecion-list
       [recordList]="recordCollectionService.recordsMain"
-      (onDeleteRecordList)="recordCollectionService.onDeleteRecordMain($event)"
+      (onDeleteRecordList)="recordCollectionService.deleteRecordById($event)"
     >
     </record-collecion-list>
   </div>

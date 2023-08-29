@@ -17,10 +17,10 @@ export class ListComponent {
 
 
   @Output()
-  public onDeleteRecordList: EventEmitter<number> = new EventEmitter();
+  public onDeleteRecordList: EventEmitter<string> = new EventEmitter();
 
-  emitId(index: number): void {
-    this.onDeleteRecordList.emit(index);
+  emitId(id: string): void {
+    this.onDeleteRecordList.emit(id);
   }
 
 }

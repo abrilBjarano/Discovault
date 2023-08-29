@@ -35,8 +35,15 @@ export class RecordCollectionService {
     this.recordsMain.push( newRecord );
   }
 
-  onDeleteRecordMain( index: number ): void {
-    this.recordsMain.splice(index, 1);
+  // onDeleteRecordMain( index: number ): void {
+  deleteRecordById( id: string ): void {
+
+    this.recordsMain = this.recordsMain.filter( record => record.id !== id );
+
+    console.log(id);
+
   }
+
+  //TODO: Easteregg h1
 
 }
