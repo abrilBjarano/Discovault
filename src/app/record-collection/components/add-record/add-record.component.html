@@ -1,11 +1,47 @@
 <h4 class="text-center">Add record</h4>
+
 <form class="row me-auto">
 
-  <input type="text" class="form-control mb-2" placeholder="Record">
-  <input type="text" class="form-control mb-2" placeholder="By">
-  <input type="text" class="form-control mb-2" placeholder="Songs">
-  <input type="text" class="form-control mb-2" placeholder="Release date">
-  <button type="submit" class="btn btn-success">
+  <input
+    type="text"
+    class="form-control mb-2"
+    placeholder="Record"
+    [(ngModel)]="recordAdd.name"
+    name="name"
+  >
+
+  <input
+    type="text"
+    class="form-control mb-2"
+    placeholder="By"
+    [(ngModel)]="recordAdd.by"
+    name="by"
+  >
+
+  <input
+    type="text"
+    class="form-control mb-2"
+    placeholder="Songs"
+    [(ngModel)]="recordAdd.songs"
+    name="songs"
+  >
+
+  <input
+    type="text"
+    class="form-control mb-2"
+    placeholder="Release date"
+    [(ngModel)]="recordAdd.release_date"
+    name="release_date"
+  >
+
+  <button
+    type="submit"
+    class="btn btn-success"
+    (click)="emitRecord()"
+  >
     Add
   </button>
+
+  <pre> {{ recordAdd | json }} </pre>
+
 </form>

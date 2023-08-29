@@ -2,10 +2,22 @@
 
 <ul class="list-group">
   <li
-    *ngFor="let record of recordList"
+    *ngFor="
+    let record of recordList;
+    let i = index;
+    let isEven = even;
+    let isOdd = odd;"
+
     class="list-group-item"
+
+
+    [ngClass]="{
+      'list-group-item-danger': isEven,
+      'list-group-item-warning': isOdd,
+    }"
   >
 
+    <span class="text-danger"> {{ i + 1 }}. </span>
     <strong>{{ record.name }} </strong>
     <span> by </span>
     <strong>{{ record.by }}</strong>
