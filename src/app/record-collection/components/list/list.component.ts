@@ -15,10 +15,12 @@ export class ListComponent {
     release_date: 2005
   }]
 
+
   @Output()
   public onDeleteRecordList: EventEmitter<number> = new EventEmitter();
 
   emitId(index: number): void {
     this.onDeleteRecordList.emit(index);
   }
+
 }

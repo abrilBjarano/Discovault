@@ -1,44 +1,55 @@
 <h4 class="text-center">List</h4>
 
-<ul class="list-group">
-  <li
-    *ngFor="
-    let record of recordList;
-    let i = index;
-    let isEven = even;
-    let isOdd = odd;"
-
-    class="
-      list-group-item
-      d-flex justify-content-between
-      align-items-center
-    "
-
-    [ngClass]="{
-      'list-group-item-danger': isEven,
-      'list-group-item-warning': isOdd,
-    }"
+<div *ngIf="recordList.length !== 0; else EmptyRecordList">
+  <ul
+    class="list-group"
   >
+    <li
+      *ngFor="
+      let record of recordList;
+      let i = index;
+      let isEven = even;
+      let isOdd = odd;"
 
-    <div>
-      <span class="text-primary"> {{ i + 1 }}. </span>
-      <strong>{{ record.name }} </strong>
-      <span> by </span>
-      <strong>{{ record.by }} </strong>
-      <br>
-      <span> Songs: {{record.songs}} - </span>
-      <span> Release date: {{record.release_date}}</span>
-    </div>
-
-    <button
       class="
-        btn btn-danger
-        btn-sm
+        list-group-item
+        d-flex justify-content-between
+        align-items-center
       "
-      (click)="emitId(i);"
-    >
-      X
-    </button>
 
-  </li>
-</ul>
+      [ngClass]="{
+        'list-group-item-danger': isEven,
+        'list-group-item-warning': isOdd,
+      }"
+    >
+
+      <div>
+        <span class="text-primary"> {{ i + 1 }}. </span>
+        <strong>{{ record.name }} </strong>
+        <span> by </span>
+        <strong>{{ record.by }} </strong>
+        <br>
+        <span> Songs: {{record.songs}} - </span>
+        <span> Release date: {{record.release_date}}</span>
+      </div>
+
+      <button
+        class="
+          btn btn-danger
+          btn-sm
+        "
+        (click)="emitId(i);"
+      >
+        X
+      </button>
+
+    </li>
+
+  </ul>
+</div>
+
+<ng-template #EmptyRecordList>
+  <h3 class="alert alert-warning">You don't have any record on your collection. What are you waiting for to get started? 🗃️</h3>
+</ng-template>
+
+
