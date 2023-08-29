@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Record } from '../../interfaces/record.interface';
 
 @Component({
@@ -6,6 +6,9 @@ import { Record } from '../../interfaces/record.interface';
   templateUrl: './add-record.component.html',
 })
 export class AddRecordComponent {
+
+  @Output()
+  public onNewRecordAdd: EventEmitter<Record> = new EventEmitter();
 
   public recordAdd: Record = {
     name: '',
@@ -15,14 +18,15 @@ export class AddRecordComponent {
   };
 
   emitRecord(): void {
-    console.log(this.recordAdd);
 
-    if( this.recordAdd.name.length === 0 ) {
-      alert('No empty record is valid!');
+    const { name, by , songs, release_date} = this.recordAdd;
+
+    if( name.length === 0 )
       return;
-    }
 
-    this.recordAdd = { name: '', by: '', songs: 0, release_date: 0}
+    this.onNewRecordAdd.emit(this.recordAdd);
+
+    this.recordAdd = { name: '', by: '', songs: 0, release_date: 0};
 
   }
 

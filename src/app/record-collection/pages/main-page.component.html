@@ -2,11 +2,17 @@
 
 <div class="row ms-auto me-auto">
   <div class="col">
-    <record-collecion-list [recordList]="recordsMain"></record-collecion-list>
+    <record-collecion-list
+      [recordList]="recordsMain"
+    >
+    </record-collecion-list>
   </div>
 
   <div class="col">
-    <record-collection-add-record></record-collection-add-record>
+    <record-collection-add-record
+      (onNewRecordAdd)="onNewRecordMain($event)"
+    >
+    </record-collection-add-record>
   </div>
 </div>
 

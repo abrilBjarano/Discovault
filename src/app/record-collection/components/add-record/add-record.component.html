@@ -1,6 +1,9 @@
 <h4 class="text-center">Add record</h4>
 
-<form class="row me-auto">
+<form
+  class="row me-auto"
+  (ngSubmit)="emitRecord()"
+>
 
   <input
     type="text"

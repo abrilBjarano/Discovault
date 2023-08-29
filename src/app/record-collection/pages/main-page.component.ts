@@ -21,4 +21,8 @@ export class MainPageComponent {
     release_date: 1998
   }]
 
+  onNewRecordMain( record: Record ): void {
+    this.recordsMain.push( record );
+  }
+
 }
